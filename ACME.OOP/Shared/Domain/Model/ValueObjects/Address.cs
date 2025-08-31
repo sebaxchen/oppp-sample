@@ -32,14 +32,10 @@ public record Address
         City = city;
         StateOrRegion = stateOrRegion;
         Country = country;
-    }
-
-    public override string Tostring()
-    {
-        => $"{Street} {Number}, {City}, {StateOrRegion}, {PostalCode}, {Country}";
-    }
         
     
-    
-    
+        
+    }
+    public override string ToString() =>
+        $"{Street}, {Number}, {City}, {StateOrRegion}, {PostalCode}, {Country}";
 }
