@@ -1,7 +1,6 @@
 ﻿using ACME.OOP.Procurement.Domain.Model.Aggregates;
 using ACME.OOP.Procurement.Domain.Model.ValueObjects;
-using ACME.OOP.SCM.Domain.Agregates;
-using ACME.OOP.SCM.Domain.Model.Aggregates;
+using ACME.OOP.SCM.Domain.Model.Agregates;
 using ACME.OOP.SCM.Domain.Model.ValueObjects;
 using ACME.OOP.Shared.Domain.Model.ValueObjects;
 
@@ -11,11 +10,11 @@ var supplierAddress = new Address("Supplier St", "123", "SupplierCity", "Supplie
 var supplier = new Supplier("SUP001", "Microsoft, Inc.", supplierAddress);
 
 // Create a new purchase order for the supplier
-var purchaseOrder = new PurchaseOrder("PO001", new SupplierId(supplier.Identifier), DateTime.Now, "USD");
+var purchaseOrder = new PurchaseOrder("PO001", new SupplierId(supplier.identifier), DateTime.Now, "USD");
 // Add items to the purchase order
 purchaseOrder.AddItem(ProductId.New(), 10, 25.99m)
     .AddItem(ProductId.New(), 20, 19.99m);
-Console.WriteLine($"Purchase Order {purchaseOrder.OrderNumber} created for Supplier {supplier.Name} in {purchaseOrder.Currency}");
+Console.WriteLine($"Purchase Order {purchaseOrder.OrderNumber} created for Supplier {supplier.name} in {purchaseOrder.Currency}");
 // Calculate and display the total amounts
 foreach (var item in purchaseOrder.Items)
 {
