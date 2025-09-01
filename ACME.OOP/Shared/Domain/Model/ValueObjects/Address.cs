@@ -4,7 +4,7 @@ namespace ACME.OOP.Shared.Domain.Model.ValueObjects;
 
 public record Address
 {
-    public string Street { get; init; }
+    public string Street { get; init; } 
     public string Number { get; init; }
     public string City { get; init; }
     public string StateOrRegion { get; init; }
@@ -32,8 +32,6 @@ public record Address
         City = city;
         StateOrRegion = stateOrRegion;
         Country = country;
-        
-    
         
     }
     public override string ToString() =>
